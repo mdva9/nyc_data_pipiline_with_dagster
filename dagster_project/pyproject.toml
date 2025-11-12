@@ -1,0 +1,25 @@
+[project]
+name = "dagster-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "58493", email = "58493@etu.he2b.be" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "dagit>=1.12.1",
+    "dagster>=1.12.1",
+    "polars>=1.35.2",
+    "pyarrow>=22.0.0",
+]
+
+[project.scripts]
+dagster-project = "dagster_project:main"
+
+[build-system]
+requires = ["uv_build>=0.9.8,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.dagster]
+module_name = "dagster_project"
