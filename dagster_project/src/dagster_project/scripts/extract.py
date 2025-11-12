@@ -22,3 +22,6 @@ def extract():
         file.write(response.content)
 
     return str(file_path)
+
+if __name__ == "__main__":
+    extract()
