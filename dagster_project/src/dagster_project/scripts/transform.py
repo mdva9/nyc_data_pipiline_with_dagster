@@ -1,3 +1,4 @@
+import os
 import polars as pl
 from dagster import op
 from pathlib import Path
@@ -9,6 +10,7 @@ TMP_DIR.mkdir(parents=True, exist_ok=True)
 
 @op
 def transform(file_path: str):
+    print("📂 Current working directory:", os.getcwd())
     """"""
     df = pl.read_parquet(file_path)
 

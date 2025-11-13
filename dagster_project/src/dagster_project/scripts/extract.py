@@ -1,3 +1,4 @@
+import os
 import requests
 from dagster import op
 from pathlib import Path
@@ -10,6 +11,7 @@ RAW_DIR.mkdir(parents=True, exist_ok=True)
 
 @op
 def extract():
+    print("📂 Current working directory:", os.getcwd())
     """"""
     url = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-01.parquet"
 
@@ -20,6 +22,8 @@ def extract():
 
     with open (file_path, "wb") as file:
         file.write(response.content)
+
+
 
     return str(file_path)
 

@@ -1,3 +1,4 @@
+import os
 import polars as pl
 from dagster import op
 from pathlib import Path
@@ -9,12 +10,15 @@ PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
 @op
 def load(file_path:str):
+
+    print("📂 Current working directory:", os.getcwd())
     """"""
     df = pl.read_parquet(file_path)
 
     out_path = PROCESSED_DIR / "yellow_tripdata_cleaned.parquet"
 
     df.write_parquet(out_path)
+
 
     return f"Saved cleaned dataset to {out_path}"
 
