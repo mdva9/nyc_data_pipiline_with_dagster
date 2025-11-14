@@ -28,7 +28,6 @@ nyc-taxi-dagster-pipeline/
 │
 ├── pyproject.toml                        # uv project configuration
 ├── uv.lock                               # uv lockfile
-├── README.md                             # Project documentation
 └── workspace.yaml                        # Dagster workspace config
 ```
 ---
